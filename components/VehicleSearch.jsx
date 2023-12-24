@@ -54,12 +54,12 @@ const VehicleSearch = () => {
       <div className="grid grid-cols-12 gap-0">
         <div className="relative hidden lg:flex justify-center items-center lg:col-span-2 px-4">
           <div
-            className="absolute top-0 bottom-0 -right-0.5 h-full w-full bg-primary"
+            className="absolute top-0 bottom-0 -right-0.5 h-full w-full bg-primary px-8"
             style={{
               clipPath: `polygon(80% 0, 100% 0%, 100% 100%, 80% 100%, 97% 50%)`,
             }}
           />
-          <Image src={carAbstract} alt="car abstract" className="w-full" />
+          <Image src={carAbstract} alt="car abstract" className="max-w-full h-auto text-center mx-auto" />
         </div>
         <div className="bg-primary col-span-12 lg:col-span-10 h-full flex items-center px-4 py-12 lg:p-12">
           <form
