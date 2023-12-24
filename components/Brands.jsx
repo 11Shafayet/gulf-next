@@ -45,7 +45,7 @@ const Brands = () => {
     <div className="bg-secondary py-20">
       <div className="container px-4 mx-auto">
         <div className="text-center">
-          <h4 className="text-2xl md:text-4xl xl:text-5xl mb-4">
+          <h4 className="text-2xl md:text-4xl xl:text-5xl font-bold mb-4">
             Top Car Brands
           </h4>
           <div className="flex justify-center items-center mb-10">

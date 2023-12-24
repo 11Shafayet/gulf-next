@@ -4,11 +4,11 @@ import Image from 'next/image';
 
 const Hero = () => {
   return (
-    <div className="relative min-h-[90vh] flex justify-center items-center bg-cover bg-center bg-no-repeat overflow-hidden py-12 z-10">
+    <div className="relative min-h-[65vh] sm:min-h-[90vh] flex justify-center items-center bg-cover bg-center bg-no-repeat overflow-hidden py-12 z-10">
       <Image
         src={heroBg}
         alt="hero"
-        className="absolute inset-0 w-full h-full -z-10"
+        className="absolute inset-0 w-full h-full object-cover -z-10"
       />
       <div className="absolute inset-0 bg-black bg-opacity-45 -z-10" />
       <div className="container mx-auto px-4">

@@ -97,7 +97,7 @@ const Services = () => {
         const { svg, title, description } = service;
         return (
           <div
-            className="service-card flex flex-col gap-y-5 px-12 py-36 hover:text-white hover:bg-primary duration-500"
+            className="service-card flex flex-col gap-y-5 px-12 py-8 md:py-36 hover:text-white hover:bg-primary duration-500"
             key={i}
           >
             <div dangerouslySetInnerHTML={{ __html: svg }} />

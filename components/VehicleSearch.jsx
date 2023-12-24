@@ -52,7 +52,7 @@ const VehicleSearch = () => {
   return (
     <div className="bg-white">
       <div className="grid grid-cols-12 gap-0">
-        <div className="relative hidden md:flex justify-center items-center md:col-span-2 px-4">
+        <div className="relative hidden lg:flex justify-center items-center lg:col-span-2 px-4">
           <div
             className="absolute top-0 bottom-0 -right-0.5 h-full w-full bg-primary"
             style={{
@@ -61,9 +61,9 @@ const VehicleSearch = () => {
           />
           <Image src={carAbstract} alt="car abstract" className="w-full" />
         </div>
-        <div className="bg-primary col-span-12 md:col-span-10 h-full flex items-center px-4 md:p-12">
+        <div className="bg-primary col-span-12 lg:col-span-10 h-full flex items-center px-4 py-12 lg:p-12">
           <form
-            className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 items-end w-full"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8 items-end w-full"
             onSubmit={handleSubmit}
           >
             {selectOptions.map((item, i) => {
@@ -115,7 +115,7 @@ const VehicleSearch = () => {
             <div>
               <button
                 type="submit"
-                className="border border-white px-8 py-3 rounded-full text-white font-medium hover:bg-white hover:text-primary duration-500"
+                className="border border-white px-8 py-3 rounded-full text-white font-medium hover:bg-white hover:text-primary inline-flex whitespace-nowrap duration-500"
               >
                 Search the vehicle
               </button>
