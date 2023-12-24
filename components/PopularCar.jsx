@@ -100,7 +100,7 @@ const PopularCars = () => {
 
                     return (
                       <div
-                        className="relative rounded-2xl overflow-hidden"
+                        className="relative rounded-2xl overflow-hidden group"
                         key={i}
                       >
                         <Swiper
@@ -111,12 +111,12 @@ const PopularCars = () => {
                           }}
                           className="mySwiper relative overflow-hidden"
                         >
-                          <div className="flex gap-x-2 justify-center items-center absolute top-5 right-5 z-[1000]">
-                            <button className="arrow-left bg-white p-3 rounded-full hover:bg-primary hover:text-white duration-300 opacity-50 hover:opacity-100">
+                          <div className="flex gap-x-2 justify-center items-center absolute top-5 right-5 z-[1000] opacity-0 group-hover:opacity-100 duration-500">
+                            <button className="arrow-left bg-white p-3 rounded-full hover:bg-primary hover:text-white duration-300 opacity-100">
                               <FaArrowLeft size={11} />
                             </button>
 
-                            <button className="arrow-right bg-white p-3 rounded-full hover:bg-primary hover:text-white duration-300 opacity-50 hover:opacity-100">
+                            <button className="arrow-right bg-white p-3 rounded-full hover:bg-primary hover:text-white duration-300 opacity-100">
                               <FaArrowRight size={11} />
                             </button>
                           </div>

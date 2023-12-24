@@ -59,7 +59,11 @@ const VehicleSearch = () => {
               clipPath: `polygon(80% 0, 100% 0%, 100% 100%, 80% 100%, 97% 50%)`,
             }}
           />
-          <Image src={carAbstract} alt="car abstract" className="max-w-full h-auto text-center mx-auto" />
+          <Image
+            src={carAbstract}
+            alt="car abstract"
+            className="max-w-full h-auto text-center mx-auto"
+          />
         </div>
         <div className="bg-primary col-span-12 lg:col-span-10 h-full flex items-center px-4 py-12 lg:p-12">
           <form
@@ -83,31 +87,33 @@ const VehicleSearch = () => {
                   >
                     {title}
                   </label>
-                  <select
-                    required
-                    name={title}
-                    id={title}
-                    value={
-                      title === 'Select Make:'
-                        ? make
-                        : title === 'Select Model:'
-                        ? model
-                        : year
-                    }
-                    onChange={(e) => stateSetter(e.target.value)}
-                    className="bg-white p-3 rounded-lg focus:border-0 focus:outline-none w-full"
-                  >
-                    <option className="uppercase" defaultValue={title} hidden>
-                      {title}
-                    </option>
-                    {options.map((option, j) => (
-                      <>
-                        <option className="uppercase" value={option} key={j}>
-                          {option}
-                        </option>
-                      </>
-                    ))}
-                  </select>
+                  <div className="relative">
+                    <select
+                      required
+                      name={title}
+                      id={title}
+                      value={
+                        title === 'Select Make:'
+                          ? make
+                          : title === 'Select Model:'
+                          ? model
+                          : year
+                      }
+                      onChange={(e) => stateSetter(e.target.value)}
+                      className="bg-white p-3 rounded-lg focus:border-0 focus:outline-none w-full max-h-[100px] overflow-y-auto"
+                    >
+                      <option className="uppercase" defaultValue={title} hidden>
+                        {title}
+                      </option>
+                      {options.map((option, j) => (
+                        <>
+                          <option className="uppercase" value={option} key={j}>
+                            {option}
+                          </option>
+                        </>
+                      ))}
+                    </select>
+                  </div>
                 </div>
               );
             })}
