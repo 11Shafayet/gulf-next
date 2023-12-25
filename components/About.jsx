@@ -7,7 +7,7 @@ const About = () => {
       <Image
         src={aboutImage}
         alt="hero"
-        className="absolute inset-0 w-full h-full object-cover -z-10"
+        className="absolute inset-0 w-full h-full object-cover hidden md:block -z-10"
       />
       <div className="absolute inset-0 bg-white bg-opacity-50 -z-10 block lg:hidden" />
       <div className="container mx-auto px-4">
