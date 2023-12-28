@@ -8,7 +8,7 @@ import brand6 from '../../public/brand6.png';
 import lineAbstract from '../../public/line-abstract.png';
 import { useState } from 'react';
 import Link from 'next/link';
-import BrandLoader from './BrandLoader';
+import BrandLoader from '../home/BrandLoader';
 import Image from 'next/image';
 
 const brandsData = [
