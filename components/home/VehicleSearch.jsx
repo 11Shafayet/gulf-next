@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import carAbstract from '../public/car-abstract.png';
+import carAbstract from '../../public/car-abstract.png';
 
 import Image from 'next/image';
 

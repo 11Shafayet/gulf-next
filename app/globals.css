@@ -59,7 +59,7 @@ textarea:focus,
 .order-select:focus {
   outline: none;
   border: 0 !important;
-  box-shadow: 0 0 11px rgba(52, 119, 255, 0.22) !important;
+  box-shadow: 0 0 11px rgba(178, 10, 11, 0.22) !important;
 }
 
 .divider {

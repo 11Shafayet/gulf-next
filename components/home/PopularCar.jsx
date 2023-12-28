@@ -1,12 +1,9 @@
 'use client';
-import carShape from '../public/car-shape.png';
-import lineAbstract from '../public/line-abstract.png';
-import car1 from '../public/1.png';
-import car2 from '../public/2.png';
-import car3 from '../public/3.png';
-import car4 from '../public/4.png';
-import car5 from '../public/5.png';
-import car6 from '../public/6.png';
+import carShape from '../../public/car-shape.png';
+import lineAbstract from '../../public/line-abstract.png';
+import car1 from '../../public/1.png';
+import car2 from '../../public/2.png';
+import car3 from '../../public/3.png';
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -29,27 +26,27 @@ const data = [
     count: 25,
   },
   {
-    images: [{ img: car2 }, { img: car3 }, { img: car4 }],
+    images: [{ img: car2 }, { img: car3 }, { img: car1 }],
     title: 'Sports Cars',
     count: 21,
   },
   {
-    images: [{ img: car3 }, { img: car4 }, { img: car5 }],
+    images: [{ img: car1 }, { img: car2 }, { img: car3 }],
     title: 'Convertible Cars',
     count: 9,
   },
   {
-    images: [{ img: car4 }, { img: car5 }, { img: car6 }],
+    images: [{ img: car2 }, { img: car3 }, { img: car1 }],
     title: 'Modal Cars',
     count: 29,
   },
   {
-    images: [{ img: car5 }, { img: car6 }, { img: car1 }],
+    images: [{ img: car3 }, { img: car2 }, { img: car1 }],
     title: 'Luxury Cars',
     count: 14,
   },
   {
-    images: [{ img: car6 }, { img: car1 }, { img: car2 }],
+    images: [{ img: car1 }, { img: car2 }, { img: car3 }],
     title: 'Mini Cars',
     count: 17,
   },
@@ -128,13 +125,17 @@ const PopularCars = () => {
                             >
                               <div className="absolute inset-0 -z-10 text-center bg-black bg-opacity-10" />
                               <div className="flex justify-center items-center -z-20 relative">
-                                <Image src={car.img} alt="car" />
+                                <Image
+                                  src={car.img}
+                                  alt="car"
+                                  className="w-full h-auto object-cover -z-10"
+                                />
                               </div>
                             </SwiperSlide>
                           ))}
                         </Swiper>
                         <div
-                          className="absolute top-0 left-0 bg-black text-white w-20 h-10 text-xl flex justify-center items-center"
+                          className="absolute top-0 left-0 bg-black text-white w-20 h-10 text-xl flex justify-center items-center z-10"
                           style={{
                             clipPath: `polygon(0% 0%, 100% 0, 85% 50%, 100% 100%, 0% 100%)`,
                           }}

@@ -1,11 +1,11 @@
-'use client'
-import brand1 from '../public/brand1.png';
-import brand2 from '../public/brand2.png';
-import brand3 from '../public/brand3.png';
-import brand4 from '../public/brand4.png';
-import brand5 from '../public/brand5.png';
-import brand6 from '../public/brand6.png';
-import lineAbstract from '../public/line-abstract.png';
+'use client';
+import brand1 from '../../public/brand1.png';
+import brand2 from '../../public/brand2.png';
+import brand3 from '../../public/brand3.png';
+import brand4 from '../../public/brand4.png';
+import brand5 from '../../public/brand5.png';
+import brand6 from '../../public/brand6.png';
+import lineAbstract from '../../public/line-abstract.png';
 import { useState } from 'react';
 import Link from 'next/link';
 import BrandLoader from './BrandLoader';

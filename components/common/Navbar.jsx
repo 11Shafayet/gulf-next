@@ -1,6 +1,6 @@
 'use client';
 
-import logo from '../public/logo.png';
+import logo from '../../public/logo.png';
 import { FaPhoneAlt, FaTimes } from 'react-icons/fa';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { useState } from 'react';
@@ -42,12 +42,16 @@ const Navbar = () => {
   const [active, setActive] = useState(false);
 
   return (
-    <div className="relative bg-white">
+    <div className="relative bg-white shadow-md">
       <div className="container mx-auto px-4">
         <div className="hidden lg:flex justify-between items-center">
           {/* logo */}
           <div>
-            <Image src={logo} alt="logo" />
+            <Image
+              src={logo}
+              alt="logo"
+              className="max-w-[120px] h-auto object-cover"
+            />
           </div>
 
           {/* nav */}

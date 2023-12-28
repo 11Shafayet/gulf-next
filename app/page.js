@@ -1,23 +1,22 @@
-import Image from 'next/image'
-import {primary} from '@/app/layout'
-import About from '@/components/About'
-import Hero from '@/components/Hero'
-import VehicleSearch from '@/components/VehicleSearch'
-import WhatWeOffer from '@/components/WhatWeOffer'
-import Services from '@/components/Services'
-import Brands from '@/components/Brands'
-import PopularCars from '@/components/PopularCar'
+import Image from 'next/image';
+import About from '@/components/home/About';
+import Hero from '@/components/home/Hero';
+import VehicleSearch from '@/components/home/VehicleSearch';
+import WhatWeOffer from '@/components/home/WhatWeOffer';
+import Services from '@/components/home/Services';
+import Brands from '@/components/home/Brands';
+import PopularCars from '@/components/home/PopularCar';
 
 export default function Home() {
   return (
-   <>
-   <Hero/>
-   <VehicleSearch/>
-   <WhatWeOffer/>
-   <About/>
-   <Services/>
-   <Brands/>
-   <PopularCars/>
-   </>
-  )
+    <>
+      <Hero />
+      <VehicleSearch />
+      <WhatWeOffer />
+      <About />
+      <Services />
+      <Brands />
+      <PopularCars />
+    </>
+  );
 }

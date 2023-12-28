@@ -1,7 +1,7 @@
 import Image from 'next/image';
-import offer1 from '../public/service1.png';
-import offer2 from '../public/service2.png';
-import offer3 from '../public/service3.png';
+import offer1 from '../../public/service1.png';
+import offer2 from '../../public/service2.png';
+import offer3 from '../../public/service3.png';
 
 import Link from 'next/link';
 
@@ -31,7 +31,7 @@ const ourOffers = [
 
 const WhatWeOffer = () => {
   return (
-    <div className="py-20 md:py-44">
+    <div className="py-20 md:py-32">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-3 gap-4 md:gap-8">
           {ourOffers?.map((offer, i) => {

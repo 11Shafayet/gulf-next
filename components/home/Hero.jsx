@@ -1,10 +1,10 @@
 import { FaArrowRight } from 'react-icons/fa';
-import heroBg from '../public/hero.png';
+import heroBg from '../../public/hero.png';
 import Image from 'next/image';
 
 const Hero = () => {
   return (
-    <div className="relative min-h-[65vh] sm:min-h-[90vh] flex justify-center items-center bg-cover bg-center bg-no-repeat overflow-hidden py-12 z-10">
+    <div className="relative min-h-[65vh] sm:min-h-[75vh] flex justify-center items-center bg-cover bg-center bg-no-repeat overflow-hidden py-12 z-10">
       <Image
         src={heroBg}
         alt="hero"

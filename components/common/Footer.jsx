@@ -8,9 +8,9 @@ import {
   FaTwitterSquare,
 } from 'react-icons/fa';
 
-import logoWide from '../public/logo.png';
-import google from '../public/google-button.png';
-import apple from '../public/apple-button.png';
+import logoWide from '../../public/logo.png';
+import google from '../../public/google-button.png';
+import apple from '../../public/apple-button.png';
 import Image from 'next/image';
 
 const details = [
