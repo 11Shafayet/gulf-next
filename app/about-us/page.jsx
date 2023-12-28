@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import banner from '../../public/banner1.png';
 import banner2 from '../../public/banner2.png';
+import banner3 from '../../public/banner4.png';
 import Services from '@/components/home/Services';
 import Numbers from '@/components/common/Numbers';
 
@@ -49,7 +50,7 @@ const AboutUs = () => {
 
           <div className="flex flex-col gap-4 sm:gap-8 items-center sm:flex-row-reverse mt-12">
             <div className="w-full sm:w-1/2">
-              <Image src={banner2} alt="cars" className="text-center w-full" />
+              <Image src={banner3} alt="cars" className="text-center w-full" />
             </div>
             <div className="w-full sm:w-1/2 lg:pr-20 xl:pr-40">
               <p className="opacity-75">
