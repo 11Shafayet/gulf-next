@@ -4,12 +4,13 @@ import carOne from '../../public/1.png';
 import carTwo from '../../public/2.png';
 import carThree from '../../public/3.png';
 import sale from '../../public/sale.png';
+import upcoming from '../../public/upcoming.png';
 
 const dummyData = [
   {
     title: '2016 TOYOTA Xts',
-    timestamp: '9H 20M',
-    sale,
+    timestamp: '5D 9H 20M',
+    isSale: true,
     image: carOne,
     details: [
       {
@@ -45,7 +46,7 @@ const dummyData = [
   {
     title: '2016 TOYOTA Xts',
     timestamp: '9H 20M',
-    sale,
+    sale: false,
     image: carTwo,
     details: [
       {
@@ -81,7 +82,7 @@ const dummyData = [
   {
     title: '2016 TOYOTA Xts',
     timestamp: '9H 20M',
-    sale,
+    sale: false,
     image: carThree,
     details: [
       {
@@ -126,7 +127,7 @@ const CarList = ({ isGrid }) => {
       } `}
     >
       {dummyData.map((item, i) => {
-        const { title, timestamp, details, sale, image } = item;
+        const { title, timestamp, details, isSale, image } = item;
 
         return (
           <div
@@ -140,15 +141,13 @@ const CarList = ({ isGrid }) => {
                 isGrid ? 'col-span-1' : 'col-span-8 sm:col-span-3 sm:order-2'
               }`}
             >
-              {sale && (
-                <Image
-                  src={sale}
-                  alt="badge"
-                  className={`absolute top-0 ${
-                    isGrid ? 'left-0' : 'sm:-left-6'
-                  } `}
-                />
-              )}
+              <Image
+                src={isSale ? sale : upcoming}
+                alt="badge"
+                className={`absolute top-0 max-w-[100px] ${
+                  isGrid ? 'left-0' : 'sm:-left-6'
+                } `}
+              />
 
               <Image
                 src={image}
@@ -169,9 +168,11 @@ const CarList = ({ isGrid }) => {
                     isGrid ? 'flex-col' : 'flex-row'
                   } flex justify-between items-start gap-x-2`}
                 >
-                  <h2 className="text-xl font-semibold">{title}</h2>
-                  <div className="bg-white py-2 px-3 rounded-md">
-                    <h2 className="sm:text-lg font-bold text-primary">
+                  <h2 className="text-xl font-semibold max-w-[77%] overflow-hidden whitespace-nowrap text-ellipsis">
+                    {title}
+                  </h2>
+                  <div className="bg-white bg-opacity-30 py-1.5 px-3 rounded-md">
+                    <h2 className="sm:text-base font-semibold text-white">
                       {timestamp}
                     </h2>
                   </div>

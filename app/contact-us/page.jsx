@@ -6,27 +6,32 @@ import { FaEnvelope, FaFax, FaMapMarkerAlt, FaPhoneAlt } from 'react-icons/fa';
 import GoogleMap from '@/components/common/GoogleMap';
 import OpeningHours from '@/components/common/OpeningHours';
 import ContactForm from '@/components/common/ContactForm';
+import Link from 'next/link';
 
 const dummyData = [
   {
     icon: <FaMapMarkerAlt />,
     title: 'Find Us',
     desc: 'DUBAI, UNITED ARAB EMIRATES',
+    type: '',
   },
   {
     icon: <FaPhoneAlt />,
     title: 'Call Us',
     desc: '0581035772',
+    type: 'tel',
   },
   {
     icon: <FaEnvelope />,
     title: 'Mail Us',
     desc: 'info@arianashippingline.com',
+    type: 'mailto',
   },
   {
     icon: <FaFax />,
     title: 'Fax',
     desc: '(007) 123 456 7890',
+    type: '',
   },
 ];
 
@@ -67,7 +72,9 @@ const ContactUs = () => {
                   <h5 className="text-primary text-xl font-bold">
                     {item.title}
                   </h5>
-                  <p className="opacity-60 text-sm">{item.desc}</p>
+                  <Link href={`${item.type}:${item.desc}`}>
+                    <p className="opacity-60 text-sm">{item.desc}</p>
+                  </Link>
                 </div>
               </div>
             ))}

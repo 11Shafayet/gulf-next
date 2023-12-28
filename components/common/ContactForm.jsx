@@ -28,7 +28,6 @@ const ContactForm = () => {
           <input
             type="text"
             placeholder="Your Name"
-            name="from_name"
             className="input-with-shadow"
             required
             value={userName}
@@ -43,7 +42,6 @@ const ContactForm = () => {
           <input
             type="email"
             placeholder="Your Email"
-            name="from_email"
             className="input-with-shadow"
             value={userEmail}
             onChange={(e) => setUserEmail(e.target.value)}
@@ -52,15 +50,14 @@ const ContactForm = () => {
       </div>
       {/* input group */}
       <div className="flex flex-col md:flex-row gap-4 justify-between mt-4">
-        {/* email */}
+        {/* subject */}
         <div className=" flex flex-col gap-y-3 w-full">
-          <label htmlFor="email" className="form-label !text-base">
+          <label htmlFor="subject" className="form-label !text-base">
             Subject
           </label>
           <input
             type="text"
             placeholder="Subject"
-            name="from_email"
             className="input-with-shadow"
             value={subject}
             onChange={(e) => setSubject(e.target.value)}
