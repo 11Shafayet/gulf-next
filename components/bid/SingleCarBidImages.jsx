@@ -53,7 +53,7 @@ const SingleCarBidImages = () => {
         onSwiper={setThumbsSwiper}
         loop={true}
         spaceBetween={10}
-        slidesPerView={4}
+        slidesPerView={5}
         freeMode={true}
         watchSlidesProgress={true}
         modules={[FreeMode, Thumbs]}
@@ -64,7 +64,7 @@ const SingleCarBidImages = () => {
             <Image
               src={item.img}
               alt="car"
-              className="max-h-[70px] w-full object-cover rounded-xl"
+              className="max-h-[100px] w-full object-cover rounded-xl"
             />
           </SwiperSlide>
         ))}
