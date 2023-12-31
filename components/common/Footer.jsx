@@ -50,11 +50,11 @@ const resourcesData = [
   },
   {
     text: 'About',
-    link: '/',
+    link: '/about-us',
   },
   {
     text: 'Auctions',
-    link: '/',
+    link: '/auctions',
   },
   {
     text: 'Services',
@@ -62,7 +62,7 @@ const resourcesData = [
   },
   {
     text: 'Contact Us',
-    link: '/',
+    link: '/contact-us',
   },
   {
     text: 'Terms & Conditions',
