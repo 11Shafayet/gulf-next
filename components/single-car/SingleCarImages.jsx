@@ -30,7 +30,7 @@ const SingleCarBidImages = () => {
       <Swiper
         loop={true}
         spaceBetween={10}
-        navigation={true}
+        navigation={false}
         thumbs={{ swiper: thumbsSwiper }}
         autoplay={{
           delay: 3000,
