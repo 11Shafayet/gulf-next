@@ -6,6 +6,7 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import one from '../../public/1.png';
 
 const navItems = [
   {
@@ -28,18 +29,12 @@ const navItems = [
     text: 'Contact Us',
     link: 'contact-us',
   },
-  {
-    text: 'Login',
-    link: '',
-  },
-  {
-    text: 'Register',
-    link: '',
-  },
 ];
 
 const Navbar = () => {
   const [active, setActive] = useState(false);
+  const [user, setUser] = useState(true);
+  const [userDash, setUserDash] = useState(false);
 
   return (
     <div className="relative bg-white shadow-md">
@@ -61,14 +56,47 @@ const Navbar = () => {
                 <Link href={item.link}>{item.text}</Link>
               </li>
             ))}
+
+            {!user && (
+              <>
+                <li className="text-base font-medium hover:text-primary">
+                  <Link href={`/`}>Login</Link>
+                </li>
+                <li className="text-base font-medium hover:text-primary">
+                  <Link href={`/`}>Register</Link>
+                </li>
+              </>
+            )}
           </ul>
 
-          <div className="flex items-center gap-x-2 text-primary">
-            <FaPhoneAlt size={30} className="rotate-12" />
-            <div>
-              <p className="text-sm">Free Consultation</p>
-              <p className="text-xl font-medium">0581035772</p>
+          <div className="flex gap-x-4 items-center">
+            <div className="flex items-center gap-x-2 text-primary">
+              <FaPhoneAlt size={30} className="rotate-12" />
+              <div>
+                <p className="text-sm">Free Consultation</p>
+                <p className="text-xl font-medium">0581035772</p>
+              </div>
             </div>
+
+            {user && (
+              <div
+                className="relative cursor-pointer"
+                onClick={() => setUserDash((prev) => !prev)}
+              >
+                <Image
+                  src={one}
+                  alt="user"
+                  className="w-11 h-11 rounded-full"
+                />
+                {userDash && (
+                  <div className="absolute top-[111%] right-0 bg-white shadow-light w-32 h-16 flex justify-center items-center">
+                    <h6 className="hover:text-primary cursor-pointer font-bold text-lg">
+                      Logout
+                    </h6>
+                  </div>
+                )}
+              </div>
+            )}
           </div>
         </div>
 
@@ -85,12 +113,34 @@ const Navbar = () => {
             <Image src={logo} alt="logo" />
           </div>
 
-          <div className="flex items-center gap-x-2 text-primary">
-            <FaPhoneAlt size={30} className="rotate-12" />
-            <div>
-              <p className="text-sm">Free Consultation</p>
-              <p className="sm:text-xl font-medium">0581035772</p>
+          <div className="flex gap-x-4 items-center">
+            <div className="hidden sm:flex items-center gap-x-2 text-primary">
+              <FaPhoneAlt size={30} className="rotate-12" />
+              <div>
+                <p className="text-sm">Free Consultation</p>
+                <p className="sm:text-xl font-medium">0581035772</p>
+              </div>
             </div>
+
+            {user && (
+              <div
+                className="relative cursor-pointer"
+                onClick={() => setUserDash((prev) => !prev)}
+              >
+                <Image
+                  src={one}
+                  alt="user"
+                  className="w-11 h-11 rounded-full"
+                />
+                {userDash && (
+                  <div className="absolute top-[111%] right-0 bg-white shadow-light w-32 h-16 flex justify-center items-center">
+                    <h6 className="hover:text-primary cursor-pointer font-bold text-lg">
+                      Logout
+                    </h6>
+                  </div>
+                )}
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -112,6 +162,16 @@ const Navbar = () => {
                 <Link href={item.link}>{item.text}</Link>
               </li>
             ))}
+            {!user && (
+              <>
+                <li className="text-base font-medium hover:text-primary">
+                  <Link href={`/`}>Login</Link>
+                </li>
+                <li className="text-base font-medium hover:text-primary">
+                  <Link href={`/`}>Register</Link>
+                </li>
+              </>
+            )}
           </ul>
         </div>
       )}
