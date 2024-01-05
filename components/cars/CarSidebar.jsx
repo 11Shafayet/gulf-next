@@ -1,8 +1,10 @@
 'use client';
 
-import { Accordion, ToggleSwitch } from 'flowbite-react';
+import { Accordion } from 'flowbite-react';
 import React, { useState } from 'react';
 import { FaTimes } from 'react-icons/fa';
+
+import './CarSidebar.css';
 
 const CarSidebar = () => {
   const [odometerFilter, setOdometerFilter] = useState([0, 250000]);
@@ -163,6 +165,20 @@ const CarSidebar = () => {
     }));
   };
 
+  // Use an array of states to track the open/close state of each accordion
+  const [accordionStates, setAccordionStates] = useState(
+    new Array(searchFilters.length).fill(false)
+  );
+
+  // Function to toggle the state of a specific accordion
+  const toggleAccordion = (index) => {
+    setAccordionStates((prevStates) => {
+      const newStates = [...prevStates];
+      newStates[index] = !newStates[index];
+      return newStates;
+    });
+  };
+
   const searchFilter = (e) => {
     e.preventDefault();
   };
@@ -236,9 +252,13 @@ const CarSidebar = () => {
           </div>
         </div>
 
-        <Accordion className="!border-0">
+        <Accordion alwaysOpen className="!border-0 gulf_accordion">
           {/* odometer */}
-          <Accordion.Panel>
+          <Accordion.Panel
+            onFocus="bg-transparent"
+            onFocusCapture="bg-transparent"
+            className="focus:!bg-transparent"
+          >
             <Accordion.Title className="text-lg font-bold">
               Odometer
             </Accordion.Title>
@@ -408,14 +428,14 @@ const CarSidebar = () => {
                       value={searchedText}
                       onChange={(e) => setSearchedText(e.target.value)}
                     />
-                    <div className="flex flex-col max-h-[200px] overflow-y-auto ml-2">
+                    <div className="flex flex-col gap-y-2 max-h-[200px] overflow-y-auto ml-2 mt-2">
                       {item.searchOptons.map((option, j) => {
                         const { text, value, count } = option;
                         return (
                           <label key={j}>
                             <input
                               type="checkbox"
-                              className="mr-2"
+                              className="mr-2 w-4 h-4"
                               checked={checkboxFilters[item.title]?.[value]}
                               onChange={() =>
                                 handleCheckboxChange(item.title, value)
