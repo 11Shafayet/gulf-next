@@ -13,7 +13,7 @@ const CarSidebar = () => {
   const [checkboxFilters, setCheckboxFilters] = useState({});
   const [searchedText, setSearchedText] = useState('');
   const [toggler, setToggler] = useState(false);
-  const [saleDate, setSaleDate] = useState('');
+  const [saleDate, setSaleDate] = useState([]);
 
   const yearOptions = [
     '2023',
@@ -163,20 +163,6 @@ const CarSidebar = () => {
         [value]: !prevFilters[category]?.[value],
       },
     }));
-  };
-
-  // Use an array of states to track the open/close state of each accordion
-  const [accordionStates, setAccordionStates] = useState(
-    new Array(searchFilters.length).fill(false)
-  );
-
-  // Function to toggle the state of a specific accordion
-  const toggleAccordion = (index) => {
-    setAccordionStates((prevStates) => {
-      const newStates = [...prevStates];
-      newStates[index] = !newStates[index];
-      return newStates;
-    });
   };
 
   const searchFilter = (e) => {
@@ -384,6 +370,10 @@ const CarSidebar = () => {
                       name="saleDateFrom"
                       id="saleDateFrom"
                       className="border rounded-md p-1"
+                      value={saleDate[0] || ''}
+                      onChange={(e) =>
+                        setSaleDate([e.target.value, saleDate[1] || ''])
+                      }
                     />
                   </div>
                   <div className="flex w-full justify-between gap-x-1">
@@ -393,6 +383,10 @@ const CarSidebar = () => {
                       name="saleDateTo"
                       id="saleDateTo"
                       className="border rounded-md p-1"
+                      value={saleDate[1] || ''}
+                      onChange={(e) =>
+                        setSaleDate([saleDate[0] || '', e.target.value])
+                      }
                     />
                   </div>
                 </div>
