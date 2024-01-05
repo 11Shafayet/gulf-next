@@ -89,8 +89,17 @@ const Navbar = () => {
                   className="w-11 h-11 rounded-full"
                 />
                 {userDash && (
-                  <div className="absolute top-[111%] right-0 bg-white shadow-light w-32 h-16 flex justify-center items-center">
-                    <h6 className="hover:text-primary cursor-pointer font-bold text-lg">
+                  <div className="absolute top-[111%] right-0 bg-white shadow-light min-w-80 flex flex-col justify-center items-center z-[10000]">
+                    <h6 className="hover:bg-primary hover:text-white cursor-pointer font-bold text-lg w-full py-3 px-3">
+                      Logout
+                    </h6>
+                    <h6 className="hover:bg-primary hover:text-white cursor-pointer font-bold text-lg w-full py-3 px-3">
+                      Dashboard
+                    </h6>
+                    <h6 className="hover:bg-primary hover:text-white cursor-pointer font-bold text-lg w-full py-3 px-3">
+                      Account Setting
+                    </h6>
+                    <h6 className="hover:bg-primary hover:text-white cursor-pointer font-bold text-lg w-full py-3 px-3">
                       Logout
                     </h6>
                   </div>
@@ -133,8 +142,17 @@ const Navbar = () => {
                   className="w-11 h-11 rounded-full"
                 />
                 {userDash && (
-                  <div className="absolute top-[111%] right-0 bg-white shadow-light w-32 h-16 flex justify-center items-center">
-                    <h6 className="hover:text-primary cursor-pointer font-bold text-lg">
+                  <div className="absolute top-[111%] right-0 bg-white black-shadow min-w-72 flex flex-col justify-center items-center z-[10000]">
+                    <h6 className="hover:bg-primary hover:text-white cursor-pointer font-bold text-lg w-full py-3 px-3">
+                      Logout
+                    </h6>
+                    <h6 className="hover:bg-primary hover:text-white cursor-pointer font-bold text-lg w-full py-3 px-3">
+                      Dashboard
+                    </h6>
+                    <h6 className="hover:bg-primary hover:text-white cursor-pointer font-bold text-lg w-full py-3 px-3">
+                      Account Setting
+                    </h6>
+                    <h6 className="hover:bg-primary hover:text-white cursor-pointer font-bold text-lg w-full py-3 px-3">
                       Logout
                     </h6>
                   </div>
