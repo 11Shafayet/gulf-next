@@ -85,37 +85,35 @@ const RelatedCars = () => {
           {dummyData.map((item, i) => {
             const { title, lot, currentBid, location, image } = item;
             return (
-              <div
-                className="p-2 border border-primary border-opacity-20  rounded-md overflow-hidden"
+              <SwiperSlide
+                className="border border-primary border-opacity-20  rounded-md overflow-hidden"
                 key={i}
               >
-                <SwiperSlide key={i}>
-                  <Image src={image} alt="car" className="w-full" />
-                  <div className="p-3 flex flex-col gap-1">
-                    <p>Lot: {lot}</p>
-                    <h4 className="font-semibold text-lg">
-                      Current Bid:{' '}
-                      {currentBid ? (
-                        currentBid
-                      ) : (
-                        <span className="text-primary cursor-pointer">
-                          Start the bid
-                        </span>
-                      )}
-                    </h4>
-                    <p>Location: {location}</p>
-                  </div>
-                  <div className="flex justify-between items-center gap-2 p-3">
-                    <button className="flex justify-center items-center gap-x-1 bg-primary text-white hover:bg-opacity-90 rounded-lg py-2 px-3">
-                      View Details <FaArrowRight />
-                    </button>
-                    <button className="border border-primary text-primary hover:text-white hover:bg-primary duration-300 rounded py-1.5 px-3 flex justify-center items-center gap-x-1">
-                      <FaStar />
-                      Watch
-                    </button>
-                  </div>
-                </SwiperSlide>
-              </div>
+                <Image src={image} alt="car" className="w-full" />
+                <div className="p-3 flex flex-col gap-1">
+                  <p>Lot: {lot}</p>
+                  <h4 className="font-semibold text-lg">
+                    Current Bid:{' '}
+                    {currentBid ? (
+                      currentBid
+                    ) : (
+                      <span className="text-primary cursor-pointer">
+                        Start the bid
+                      </span>
+                    )}
+                  </h4>
+                  <p>Location: {location}</p>
+                </div>
+                <div className="flex justify-between items-center gap-2 p-3">
+                  <button className="flex justify-center items-center gap-x-1 bg-primary text-white hover:bg-opacity-90 rounded-lg py-2 px-3">
+                    View Details <FaArrowRight />
+                  </button>
+                  <button className="border border-primary text-primary hover:text-white hover:bg-primary duration-300 rounded py-1.5 px-3 flex justify-center items-center gap-x-1">
+                    <FaStar />
+                    Watch
+                  </button>
+                </div>
+              </SwiperSlide>
             );
           })}
         </Swiper>

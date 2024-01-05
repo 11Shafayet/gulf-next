@@ -1,11 +1,17 @@
-import { Accordion } from 'flowbite-react';
-import React, { useEffect, useState } from 'react';
+'use client';
+
+import { Accordion, ToggleSwitch } from 'flowbite-react';
+import React, { useState } from 'react';
+import { FaTimes } from 'react-icons/fa';
 
 const CarSidebar = () => {
   const [odometerFilter, setOdometerFilter] = useState([0, 250000]);
   const [yearFilter, setYearFilter] = useState([1999, 2023]);
+  const [newlyAddedVehicle, setNewlyAddedVehicle] = useState('last 7 hours');
   const [checkboxFilters, setCheckboxFilters] = useState({});
   const [searchedText, setSearchedText] = useState('');
+  const [toggler, setToggler] = useState(false);
+  const [saleDate, setSaleDate] = useState('');
 
   const yearOptions = [
     '2023',
@@ -145,6 +151,8 @@ const CarSidebar = () => {
     },
   ];
 
+  const newlyAddedVehicleFilters = ['last 7 hours', 'last 24 hours'];
+
   const handleCheckboxChange = (category, value) => {
     setCheckboxFilters((prevFilters) => ({
       ...prevFilters,
@@ -154,10 +162,6 @@ const CarSidebar = () => {
       },
     }));
   };
-
-  useEffect(() => {
-    console.log(checkboxFilters);
-  }, [checkboxFilters]);
 
   const searchFilter = (e) => {
     e.preventDefault();
@@ -170,7 +174,68 @@ const CarSidebar = () => {
         <p className="text-primary font-bold cursor-pointer">Reset All</p>
       </div>
       <hr className="my-5" />
+      {/* active filters */}
       <div>
+        <div className="flex flex-wrap gap-2">
+          <div className="flex items-center gap-x-1 border rounded-full p-1">
+            <h4 className="text-sm">2023 to 2024 Year</h4>{' '}
+            <FaTimes className="cursor-pointer hover:text-primary" />
+          </div>
+          <div className="flex items-center gap-x-1 border rounded-full p-1">
+            <h4 className="text-sm">Ford</h4>{' '}
+            <FaTimes className="cursor-pointer hover:text-primary" />
+          </div>
+          <div className="flex items-center gap-x-1 border rounded-full p-1">
+            <h4 className="text-sm">3.0L 6</h4>{' '}
+            <FaTimes className="cursor-pointer hover:text-primary" />
+          </div>
+          <div className="flex items-center gap-x-1 border rounded-full p-1">
+            <h4 className="text-sm">Rear wheel Drive</h4>{' '}
+            <FaTimes className="cursor-pointer hover:text-primary" />
+          </div>
+        </div>
+        <hr className="my-5" />
+      </div>
+
+      <div>
+        {/* newly added vehicle */}
+        <div className="flex items-center gap-3 mb-4">
+          <h4 className="text-sm font-bold">Newly Added Vehicle</h4>
+
+          <div>
+            <select
+              required
+              name="newlyAddedVehicle"
+              id="newlyAddedVehicle"
+              value={newlyAddedVehicle[0]}
+              onChange={(e) =>
+                setNewlyAddedVehicle((prev) => [e.target.value, prev[0]])
+              }
+              className="bg-white py-1.5 rounded-lg focus:border-0 focus:outline-none w-full max-h-[50px] overflow-y-auto shadow-light"
+            >
+              {newlyAddedVehicleFilters.map((option, i) => (
+                <>
+                  <option className="capitalize text-sm" value={option} key={i}>
+                    {option}
+                  </option>
+                </>
+              ))}
+            </select>
+          </div>
+          <div
+            className={`border w-10 h-5 rounded-full relative ${
+              toggler ? 'bg-primary bg-opacity-65' : 'bg-gray-300'
+            }`}
+            onClick={() => setToggler((prev) => !prev)}
+          >
+            <div
+              className={`absolute top-1/2 -translate-y-1/2 w-4 h-4 rounded-full duration-500 ${
+                toggler ? 'bg-white right-0.5' : 'bg-white left-0.5'
+              }`}
+            ></div>
+          </div>
+        </div>
+
         <Accordion className="!border-0">
           {/* odometer */}
           <Accordion.Panel>
@@ -178,6 +243,9 @@ const CarSidebar = () => {
               Odometer
             </Accordion.Title>
             <Accordion.Content>
+              <div className="text-primary text-end font-bold pr-2 pt-2 cursor-pointer">
+                Reset
+              </div>
               <form action="">
                 <div className="flex justify-between items-center gap-x-3 mt-2">
                   <input
@@ -201,9 +269,11 @@ const CarSidebar = () => {
                     }
                   />
                 </div>
-                <button className="bg-primary text-white font-bold hover:bg-opacity-90 py-3 px-6 rounded-md duration-300 mt-4">
-                  Apply
-                </button>
+                <div className="text-end">
+                  <button className="bg-primary text-white font-bold hover:bg-opacity-90 py-2 px-4 rounded-md duration-300 mt-4">
+                    Apply
+                  </button>
+                </div>
               </form>
             </Accordion.Content>
           </Accordion.Panel>
@@ -215,6 +285,9 @@ const CarSidebar = () => {
               Year
             </Accordion.Title>
             <Accordion.Content>
+              <div className="text-primary text-end font-bold pr-2 pt-2 cursor-pointer">
+                Reset
+              </div>
               <form action="">
                 <div className="flex justify-between items-center gap-x-3 mt-2">
                   <select
@@ -260,12 +333,57 @@ const CarSidebar = () => {
                     ))}
                   </select>
                 </div>
-                <button
-                  type="submit"
-                  className="bg-primary text-white font-bold hover:bg-opacity-90 py-3 px-6 rounded-md duration-300 mt-4"
-                >
-                  Apply
-                </button>
+                <div className="text-end">
+                  <button
+                    type="submit"
+                    className="bg-primary text-white font-bold hover:bg-opacity-90 py-2 px-4 rounded-md duration-300 mt-4"
+                  >
+                    Apply
+                  </button>
+                </div>
+              </form>
+            </Accordion.Content>
+          </Accordion.Panel>
+
+          <hr className="my-5" />
+          {/* sale Date */}
+          <Accordion.Panel>
+            <Accordion.Title className="text-lg font-bold">
+              Sale Date
+            </Accordion.Title>
+            <Accordion.Content>
+              <div className="text-primary text-end font-bold pr-2 pt-2 cursor-pointer">
+                Reset
+              </div>
+              <form action="">
+                <div className="flex flex-col justify-between items-center gap-3 mt-2">
+                  <div className="flex w-full justify-between gap-x-1">
+                    <p className="text-sm">From:</p>
+                    <input
+                      type="date"
+                      name="saleDateFrom"
+                      id="saleDateFrom"
+                      className="border rounded-md p-1"
+                    />
+                  </div>
+                  <div className="flex w-full justify-between gap-x-1">
+                    <p className="text-sm">To:</p>
+                    <input
+                      type="date"
+                      name="saleDateTo"
+                      id="saleDateTo"
+                      className="border rounded-md p-1"
+                    />
+                  </div>
+                </div>
+                <div className="text-end">
+                  <button
+                    type="submit"
+                    className="bg-primary text-white font-bold hover:bg-opacity-90 py-2 px-4 rounded-md duration-300 mt-4"
+                  >
+                    Apply
+                  </button>
+                </div>
               </form>
             </Accordion.Content>
           </Accordion.Panel>
@@ -278,6 +396,9 @@ const CarSidebar = () => {
                   {item.title}
                 </Accordion.Title>
                 <Accordion.Content>
+                  <div className="text-primary text-end font-bold pr-2 pt-2 cursor-pointer">
+                    Reset
+                  </div>
                   <form action="">
                     <input
                       type="text"
