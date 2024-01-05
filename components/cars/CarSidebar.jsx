@@ -249,8 +249,10 @@ const CarSidebar = () => {
               Odometer
             </Accordion.Title>
             <Accordion.Content>
-              <div className="text-primary text-end font-bold pr-2 pt-2 cursor-pointer">
-                Reset
+              <div className="flex justify-end">
+                <div className="border border-primary border-opacity-50 flex justify-center hover:bg-primary hover:text-white text-primary font-bold p-1 px-2 rounded-md cursor-pointer duration-300">
+                  Reset
+                </div>
               </div>
               <form action="">
                 <div className="flex justify-between items-center gap-x-3 mt-2">
@@ -291,8 +293,10 @@ const CarSidebar = () => {
               Year
             </Accordion.Title>
             <Accordion.Content>
-              <div className="text-primary text-end font-bold pr-2 pt-2 cursor-pointer">
-                Reset
+              <div className="flex justify-end">
+                <div className="border border-primary border-opacity-50 flex justify-center hover:bg-primary hover:text-white text-primary font-bold p-1 px-2 rounded-md cursor-pointer duration-300">
+                  Reset
+                </div>
               </div>
               <form action="">
                 <div className="flex justify-between items-center gap-x-3 mt-2">
@@ -358,9 +362,12 @@ const CarSidebar = () => {
               Sale Date
             </Accordion.Title>
             <Accordion.Content>
-              <div className="text-primary text-end font-bold pr-2 pt-2 cursor-pointer">
-                Reset
+              <div className="flex justify-end">
+                <div className="border border-primary border-opacity-50 flex justify-center hover:bg-primary hover:text-white text-primary font-bold p-1 px-2 rounded-md cursor-pointer duration-300">
+                  Reset
+                </div>
               </div>
+
               <form action="">
                 <div className="flex flex-col justify-between items-center gap-3 mt-2">
                   <div className="flex w-full justify-between gap-x-1">
@@ -410,8 +417,10 @@ const CarSidebar = () => {
                   {item.title}
                 </Accordion.Title>
                 <Accordion.Content>
-                  <div className="text-primary text-end font-bold pr-2 pt-2 cursor-pointer">
-                    Reset
+                  <div className="flex justify-end">
+                    <div className="border border-primary border-opacity-50 flex justify-center hover:bg-primary hover:text-white text-primary font-bold p-1 px-2 rounded-md cursor-pointer duration-300">
+                      Reset
+                    </div>
                   </div>
                   <form action="">
                     <input
