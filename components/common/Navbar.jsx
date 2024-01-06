@@ -38,6 +38,12 @@ const Navbar = () => {
 
   return (
     <div className="relative bg-white shadow-md">
+      {userDash && (
+        <div
+          className="absolute inset-0 h-screen w-screen bg-black bg-opacity-0 z-[100] overflow-hidden"
+          onClick={() => setUserDash(false)}
+        />
+      )}
       <div className="container mx-auto px-4">
         <div className="hidden lg:flex justify-between items-center">
           {/* logo */}
