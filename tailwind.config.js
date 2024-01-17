@@ -16,7 +16,10 @@ module.exports = {
         primary: '#B20A0B',
         secondary: '#F2F2F2',
       },
+      ringColor: {
+        DEFAULT: 'transparent',
+      },
     },
   },
   plugins: [],
-}
+};

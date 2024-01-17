@@ -294,7 +294,7 @@ const CarSidebar = () => {
             </Accordion.Title>
             <Accordion.Content>
               <div className="flex justify-end">
-                <div className="border border-primary border-opacity-50 flex justify-center hover:bg-primary hover:text-white text-primary font-bold p-1 px-2 rounded-md cursor-pointer duration-300">
+                <div className="ring border border-primary border-opacity-50 flex justify-center hover:bg-primary hover:text-white text-primary font-bold p-1 px-2 rounded-md cursor-pointer duration-300">
                   Reset
                 </div>
               </div>
