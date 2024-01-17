@@ -87,3 +87,38 @@ textarea:focus,
     opacity: 1;
   }
 }
+
+.PhoneInput input {
+  box-shadow: 3px 3px 11px rgba(0, 0, 0, 0.11);
+  border: 0;
+  outline: 0;
+  border-radius: 7px;
+  padding: 16px;
+}
+
+.register_step_three label {
+  color: white !important;
+}
+.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
+  color: white !important;
+}
+
+.css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+  border-color: white !important;
+}
+.css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+  width: 100%;
+  margin-top: 20px;
+}
+.MuiAutocomplete-hasPopupIcon.MuiAutocomplete-hasClearIcon.css-1h51icj-MuiAutocomplete-root
+  .MuiOutlinedInput-root
+  input,
+.css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root input {
+  color: white;
+}
+.css-1h51icj-MuiAutocomplete-root
+  .MuiOutlinedInput-root
+  .MuiAutocomplete-endAdornment
+  svg {
+  color: white !important;
+}
