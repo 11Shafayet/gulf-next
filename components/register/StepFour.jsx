@@ -5,6 +5,7 @@ import { useState } from 'react';
 const StepFour = () => {
   const [dob, setDob] = useState('');
   const [nid, setNid] = useState('');
+  const [choosenFile, setChoosenFile] = useState('');
 
   const handleFourthStep = (e) => {
     e.preventDefault();
@@ -47,7 +48,11 @@ const StepFour = () => {
         />
       </div>
       <div>
-        <input type="file" />
+        <input
+          type="file"
+          value={choosenFile}
+          onChange={(e) => setChoosenFile(e.target.value)}
+        />
       </div>
       <div className="mt-4">
         <button
