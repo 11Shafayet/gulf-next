@@ -46,6 +46,9 @@ const StepFour = () => {
           onChange={(e) => setNid(e.target.value)}
         />
       </div>
+      <div>
+        <input type="file" />
+      </div>
       <div className="mt-4">
         <button
           type="submit"
