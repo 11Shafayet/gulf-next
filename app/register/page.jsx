@@ -35,7 +35,7 @@ const Register = () => {
 
   return (
     <div
-      className="relative flex justify-center items-center min-h-[90vh] z-10"
+      className="relative flex justify-center items-center min-h-[90vh] z-10 py-12"
       style={{ backgroundImage: `url(${car1})` }}
     >
       <Image

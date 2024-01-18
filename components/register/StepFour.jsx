@@ -2,7 +2,8 @@
 
 import Image from 'next/image';
 import { useState } from 'react';
-import { MdCloudUpload } from 'react-icons/md';
+import { AiFillFileImage } from 'react-icons/ai';
+import { MdCloudUpload, MdDelete } from 'react-icons/md';
 
 const StepFour = () => {
   const [dob, setDob] = useState('');
@@ -87,32 +88,55 @@ const StepFour = () => {
       </div>
 
       {/* file */}
-      <div
-        className="w-full h-40 cursor-pointer border-2 border-dashed border-primary rounded-md overflow-hidden flex justify-center items-center"
-        onClick={() => document.querySelector('.file_upload_input').click()}
-      >
-        <input
-          type="file"
-          accept="image/*"
-          className="file_upload_input"
-          hidden
-          onChange={({ target: { files } }) => {
-            files[0] && setFileName(files[0].name);
-            if (files) {
-              setChoosenFile(URL.createObjectURL(files[0]));
-            }
-          }}
-        />
-
-        {choosenFile ? (
-          <img
-            src={choosenFile}
-            alt={fileName}
-            className="max-w-[80%] w-auto h-36 object-cover"
+      <div>
+        <div
+          className="w-full h-40 cursor-pointer border-2 border-dashed border-primary rounded-md overflow-hidden flex justify-center items-center"
+          onClick={() => document.querySelector('.file_upload_input').click()}
+        >
+          <input
+            type="file"
+            accept="image/*"
+            className="file_upload_input"
+            hidden
+            onChange={({ target: { files } }) => {
+              files[0] && setFileName(files[0].name);
+              if (files) {
+                setChoosenFile(URL.createObjectURL(files[0]));
+              }
+            }}
           />
-        ) : (
-          <MdCloudUpload className="text-primary" size={60} />
-        )}
+
+          {choosenFile ? (
+            <img
+              src={choosenFile}
+              alt={fileName}
+              className="max-w-[80%] w-auto h-36 object-cover"
+            />
+          ) : (
+            <div className="flex flex-col justify-center items-center gap-y-2 text-white">
+              <MdCloudUpload className="text-primary" size={60} />
+              <p>Browse Files To Upload</p>
+            </div>
+          )}
+        </div>
+        <div className="flex items-center gap-x-2 text-white mt-2">
+          <AiFillFileImage className="text-primary" />
+          <span className="flex items-center gap-x-1">
+            {fileName}{' '}
+            <MdDelete
+              className="cursor-pointer hover:text-primary"
+              onClick={() => {
+                setFileName('No Selected File');
+                setChoosenFile(null);
+
+                const fileInput = document.querySelector('.file_upload_input');
+                if (fileInput) {
+                  fileInput.value = ''; // Clear the input value
+                }
+              }}
+            />
+          </span>
+        </div>
       </div>
 
       <div className="mt-4">
