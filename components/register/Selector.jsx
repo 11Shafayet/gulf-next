@@ -16,7 +16,6 @@ const Selector = ({ placeholder }) => {
         setCountries(data);
       });
 
-    // Add event listener to close dropdown on outside click
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setOpen(false);
@@ -26,7 +25,6 @@ const Selector = ({ placeholder }) => {
     document.addEventListener('click', handleClickOutside);
 
     return () => {
-      // Remove event listener on component unmount
       document.removeEventListener('click', handleClickOutside);
     };
   }, []);
