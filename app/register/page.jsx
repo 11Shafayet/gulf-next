@@ -9,7 +9,7 @@ import StepThree from '@/components/register/StepThree';
 import StepFour from '@/components/register/StepFour';
 
 const Register = () => {
-  const [activeStep, setActiveStep] = useState(3);
+  const [activeStep, setActiveStep] = useState(4);
 
   //   steps
   const renderStep = (step) => (

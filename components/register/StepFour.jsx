@@ -96,17 +96,19 @@ const StepFour = () => {
           accept="image/*"
           className="file_upload_input"
           hidden
-          value={choosenFile}
-          onChange={(e) => setChoosenFile(e.target.value)}
+          onChange={({ target: { files } }) => {
+            files[0] && setFileName(files[0].name);
+            if (files) {
+              setChoosenFile(URL.createObjectURL(files[0]));
+            }
+          }}
         />
 
         {choosenFile ? (
-          <Image
+          <img
             src={choosenFile}
             alt={fileName}
-            className="w-36 h-auto"
-            width={36}
-            height={36}
+            className="max-w-[80%] w-auto h-36 object-cover"
           />
         ) : (
           <MdCloudUpload className="text-primary" size={60} />
