@@ -16,7 +16,7 @@ const Selector = ({ placeholder }) => {
       });
   }, []);
   return (
-    <div className="w-full font-medium mt-2">
+    <div className="relative w-full font-medium !mt-2 ">
       <div
         onClick={() => setOpen(!open)}
         className={`bg-white w-full p-2 py-4 flex items-center justify-between rounded ${
@@ -31,7 +31,7 @@ const Selector = ({ placeholder }) => {
         <BiChevronDown size={20} className={`${open && 'rotate-180'}`} />
       </div>
       <ul
-        className={`bg-white mt-2 overflow-y-auto ${
+        className={`absolute z-[111111] w-full top-[90%] bg-white mt-2 overflow-y-auto ${
           open ? 'max-h-60' : 'max-h-0'
         } `}
       >

@@ -134,7 +134,7 @@ const StepThree = ({ setActiveStep }) => {
       </div>
 
       {/* choose country */}
-      <div className="text-start">
+      <div className="text-start !mt-2">
         <label htmlFor="country">
           Choose Country <span className="text-primary">*</span>
         </label>
@@ -142,7 +142,7 @@ const StepThree = ({ setActiveStep }) => {
       </div>
 
       {/* choose state */}
-      <div className="text-start">
+      <div className="text-start !mt-3">
         <label htmlFor="state">
           Choose State <span className="text-primary">*</span>
         </label>

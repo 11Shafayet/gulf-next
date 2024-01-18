@@ -57,7 +57,7 @@ const SingleCarBidImages = () => {
         freeMode={true}
         watchSlidesProgress={true}
         modules={[FreeMode, Thumbs]}
-        className="mySwiper"
+        className="mySwiper !py-6 !px-2"
       >
         {images.map((item, i) => (
           <SwiperSlide key={i}>
