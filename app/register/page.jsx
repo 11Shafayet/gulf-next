@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import car1 from '../../public/car1.jpg';
-import 'react-phone-number-input/style.css';
+// import 'react-phone-number-input/style.css';
 import StepOne from '@/components/register/StepOne';
 import StepTwo from '@/components/register/StepTwo';
 import StepThree from '@/components/register/StepThree';
