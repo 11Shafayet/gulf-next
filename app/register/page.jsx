@@ -12,9 +12,6 @@ import StepFour from '@/components/register/StepFour';
 const Register = () => {
   const [activeStep, setActiveStep] = useState(1);
 
-  const [bod, setBod] = useState('');
-  const [nidNumber, seNidNumber] = useState('');
-
   //   steps
   const renderStep = (step) => (
     <>

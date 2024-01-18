@@ -67,7 +67,7 @@ const StepThree = ({ setActiveStep }) => {
         </div>
       </div>
       {/* confirm password */}
-      <div className="text-start mb-6">
+      <div className="text-start">
         <label htmlFor="conPass">
           Confirm Password <span className="text-primary">*</span>
         </label>

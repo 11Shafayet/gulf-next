@@ -141,3 +141,8 @@ textarea:focus,
   svg {
   color: white !important;
 }
+
+.css-1u3bzj6-MuiFormControl-root-MuiTextField-root,
+.css-wb57ya-MuiFormControl-root-MuiTextField-root {
+  margin-top: 28px;
+}
