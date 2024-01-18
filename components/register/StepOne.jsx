@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import PhoneInput from 'react-phone-number-input';
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css';
 
 const StepOne = ({ setActiveStep }) => {
   const [firstName, setFirstName] = useState('');
@@ -75,9 +76,9 @@ const StepOne = ({ setActiveStep }) => {
         </label>
         <PhoneInput
           required
-          className="my-2"
           defaultCountry="BD"
           placeholder="Enter phone number"
+          enableSearch
           value={phone}
           onChange={setPhone}
         />

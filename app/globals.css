@@ -96,6 +96,25 @@ textarea:focus,
   padding: 16px;
 }
 
+.react-tel-input input {
+  width: 100% !important;
+  height: 55px !important;
+  border-radius: 11px !important;
+  border: 0 !important;
+  padding-left: 55px !important;
+}
+.react-tel-input .selected-flag {
+  width: 50px !important;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+.react-tel-input .country-list .search {
+  display: flex !important;
+  align-items: center;
+}
+
+/* step three */
 .register_step_three label {
   color: white !important;
 }
