@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { BiChevronDown } from 'react-icons/bi';
 import { AiOutlineSearch } from 'react-icons/ai';
 
@@ -7,6 +7,7 @@ const Selector = ({ placeholder }) => {
   const [inputValue, setInputValue] = useState('');
   const [selected, setSelected] = useState('');
   const [open, setOpen] = useState(false);
+  const dropdownRef = useRef(null);
 
   useEffect(() => {
     fetch('https://restcountries.com/v2/all?fields=name')
@@ -14,9 +15,24 @@ const Selector = ({ placeholder }) => {
       .then((data) => {
         setCountries(data);
       });
+
+    // Add event listener to close dropdown on outside click
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setOpen(false);
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+
+    return () => {
+      // Remove event listener on component unmount
+      document.removeEventListener('click', handleClickOutside);
+    };
   }, []);
+
   return (
-    <div className="relative w-full font-medium !mt-2 ">
+    <div ref={dropdownRef} className="relative w-full font-medium !mt-2 ">
       <div
         onClick={() => setOpen(!open)}
         className={`bg-white w-full p-2 py-4 flex items-center justify-between rounded ${
