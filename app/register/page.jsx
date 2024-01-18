@@ -9,7 +9,7 @@ import StepThree from '@/components/register/StepThree';
 import StepFour from '@/components/register/StepFour';
 
 const Register = () => {
-  const [activeStep, setActiveStep] = useState(3);
+  const [activeStep, setActiveStep] = useState(4);
 
   //   steps
   const renderStep = (step) => (
@@ -35,7 +35,7 @@ const Register = () => {
 
   return (
     <div
-      className="relative flex justify-center items-center min-h-[90vh] z-10 py-12"
+      className="relative flex justify-center items-center min-h-[90vh] z-10 py-6"
       style={{ backgroundImage: `url(${car1})` }}
     >
       <Image
@@ -46,7 +46,7 @@ const Register = () => {
       <div className="absolute inset-0 bg-black bg-opacity-50 -z-10" />
       <div className="container px-4 mx-auto">
         {/**********STEPS**********/}
-        <div className="flex justify-center items-center z-100 mb-12">
+        <div className="flex justify-center items-center z-100 mb-8">
           {[1, 2, 3, 4].map((step) => renderStep(step))}
         </div>
 

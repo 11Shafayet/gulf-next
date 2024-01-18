@@ -18,14 +18,14 @@ const StepFour = () => {
   return (
     <form
       onSubmit={handleFourthStep}
-      className="max-w-[555px] mx-auto bg-white bg-opacity-10 p-4 md:p-12 rounded-md backdrop-blur-md mt-6"
+      className="max-w-[555px] mx-auto bg-white bg-opacity-10 p-4 md:p-10 rounded-md backdrop-blur-md"
     >
       <h4 className="text-2xl font-bold mb-4 text-white text-center">
         Please Fill Up the below Fields!
       </h4>
 
       {/* dob */}
-      <div className="my-4">
+      <div>
         <label htmlFor="dob" className="text-white">
           Date Of Birth<span className="text-primary">*</span>
         </label>
@@ -40,6 +40,9 @@ const StepFour = () => {
       </div>
       {/* id type */}
       <div>
+        <label htmlFor="idType" className="text-white">
+          ID Type<span className="text-primary">*</span>
+        </label>
         <select
           required
           name="idType"
@@ -58,7 +61,7 @@ const StepFour = () => {
         </select>
       </div>
       {/* id */}
-      <div className="my-4">
+      <div>
         <label htmlFor="id" className="text-white">
           ID Number<span className="text-primary">*</span>
         </label>
@@ -73,7 +76,7 @@ const StepFour = () => {
         />
       </div>
       {/* expiry date */}
-      <div className="my-4">
+      <div>
         <label htmlFor="expiryDate" className="text-white">
           Date Of Birth<span className="text-primary">*</span>
         </label>
@@ -90,7 +93,7 @@ const StepFour = () => {
       {/* file */}
       <div>
         <div
-          className="w-full h-40 cursor-pointer border-2 border-dashed border-primary rounded-md overflow-hidden flex justify-center items-center"
+          className="w-full h-28 cursor-pointer border-2 border-dashed border-primary rounded-md overflow-hidden flex justify-center items-center mt-2"
           onClick={() => document.querySelector('.file_upload_input').click()}
         >
           <input
@@ -110,7 +113,7 @@ const StepFour = () => {
             <img
               src={choosenFile}
               alt={fileName}
-              className="max-w-[80%] w-auto h-36 object-cover"
+              className="max-w-[60%] w-auto h-24 object-cover"
             />
           ) : (
             <div className="flex flex-col justify-center items-center gap-y-2 text-white">
