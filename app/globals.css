@@ -146,3 +146,11 @@ textarea:focus,
 .css-wb57ya-MuiFormControl-root-MuiTextField-root {
   margin-top: 28px;
 }
+
+/* file uploading input field */
+.file_upload_input {
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid cyan;
+  color: white;
+}

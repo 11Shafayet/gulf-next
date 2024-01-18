@@ -26,7 +26,7 @@ const StepOne = ({ setActiveStep }) => {
         <div
           className={`${
             activeTab === 'buyer' ? 'bg-primary' : 'bg-white bg-opacity-20'
-          } w-1/2 flex justify-center items-center text-white text-xl font-bold py-8 cursor-pointer hover:bg-primary hover:bg-opacity-90`}
+          } w-1/2 flex justify-center items-center text-white text-lg font-bold py-5 cursor-pointer hover:bg-primary hover:bg-opacity-90`}
           onClick={() => setActiveTab('buyer')}
         >
           Buyer
@@ -34,7 +34,7 @@ const StepOne = ({ setActiveStep }) => {
         <div
           className={`${
             activeTab === 'seller' ? 'bg-primary' : 'bg-white bg-opacity-20'
-          } w-1/2 flex justify-center items-center text-white text-xl font-bold py-8 cursor-pointer hover:bg-primary hover:bg-opacity-90`}
+          } w-1/2 flex justify-center items-center text-white text-lg font-bold py-5 cursor-pointer hover:bg-primary hover:bg-opacity-90`}
           onClick={() => setActiveTab('seller')}
         >
           Seller

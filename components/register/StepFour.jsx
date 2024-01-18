@@ -4,7 +4,8 @@ import { useState } from 'react';
 
 const StepFour = () => {
   const [dob, setDob] = useState('');
-  const [nid, setNid] = useState('');
+  const [id, setId] = useState('');
+  const [expiryDate, setExpiryDate] = useState('');
   const [choosenFile, setChoosenFile] = useState('');
 
   const handleFourthStep = (e) => {
@@ -33,23 +34,58 @@ const StepFour = () => {
           onChange={(e) => setDob(e.target.value)}
         />
       </div>
-      {/* nid */}
+      {/* id type */}
+      <div>
+        <select
+          required
+          name="idType"
+          id="idType"
+          className="input-with-shadow w-full my-2 !py-4"
+        >
+          <option className="capitalize text-lg" value="nid">
+            NID
+          </option>
+          <option className="capitalize text-lg" value="passport">
+            Passport
+          </option>
+          <option className="capitalize text-lg" value="passport">
+            Internation Driving Licence
+          </option>
+        </select>
+      </div>
+      {/* id */}
       <div className="my-4">
-        <label htmlFor="nid" className="text-white">
-          NID Number<span className="text-primary">*</span>
+        <label htmlFor="id" className="text-white">
+          ID Number<span className="text-primary">*</span>
+        </label>
+        <input
+          type="number"
+          name="id"
+          placeholder="4230937"
+          required
+          className="input-with-shadow w-full my-2 !py-4"
+          value={id}
+          onChange={(e) => setId(e.target.value)}
+        />
+      </div>
+      {/* expiry date */}
+      <div className="my-4">
+        <label htmlFor="expiryDate" className="text-white">
+          Date Of Birth<span className="text-primary">*</span>
         </label>
         <input
           type="date"
-          name="nid"
+          name="expiryDate"
           required
           className="input-with-shadow w-full my-2 !py-4"
-          value={nid}
-          onChange={(e) => setNid(e.target.value)}
+          value={expiryDate}
+          onChange={(e) => setExpiryDate(e.target.value)}
         />
       </div>
       <div>
         <input
           type="file"
+          className="file_upload_input"
           value={choosenFile}
           onChange={(e) => setChoosenFile(e.target.value)}
         />
