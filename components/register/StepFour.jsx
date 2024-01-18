@@ -1,12 +1,15 @@
 'use client';
 
+import Image from 'next/image';
 import { useState } from 'react';
+import { MdCloudUpload } from 'react-icons/md';
 
 const StepFour = () => {
   const [dob, setDob] = useState('');
   const [id, setId] = useState('');
   const [expiryDate, setExpiryDate] = useState('');
-  const [choosenFile, setChoosenFile] = useState('');
+  const [choosenFile, setChoosenFile] = useState(null);
+  const [fileName, setFileName] = useState('No Selected File');
 
   const handleFourthStep = (e) => {
     e.preventDefault();
@@ -82,14 +85,34 @@ const StepFour = () => {
           onChange={(e) => setExpiryDate(e.target.value)}
         />
       </div>
-      <div>
+
+      {/* file */}
+      <div
+        className="w-full h-40 cursor-pointer border-2 border-dashed border-primary rounded-md overflow-hidden flex justify-center items-center"
+        onClick={() => document.querySelector('.file_upload_input').click()}
+      >
         <input
           type="file"
+          accept="image/*"
           className="file_upload_input"
+          hidden
           value={choosenFile}
           onChange={(e) => setChoosenFile(e.target.value)}
         />
+
+        {choosenFile ? (
+          <Image
+            src={choosenFile}
+            alt={fileName}
+            className="w-36 h-auto"
+            width={36}
+            height={36}
+          />
+        ) : (
+          <MdCloudUpload className="text-primary" size={60} />
+        )}
       </div>
+
       <div className="mt-4">
         <button
           type="submit"

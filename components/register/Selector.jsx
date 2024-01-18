@@ -35,7 +35,7 @@ const Selector = ({ placeholder }) => {
           open ? 'max-h-60' : 'max-h-0'
         } `}
       >
-        <div className="flex gap-2 items-center  sticky top-2 px-2 bg-white mb-3">
+        <div className="flex gap-2 items-center sticky top-0 px-2 bg-white mb-3">
           <input
             type="text"
             value={inputValue}
