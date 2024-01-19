@@ -1,6 +1,6 @@
 'use client';
 
-import Image from 'next/image';
+import Select from 'react-select';
 import { useState } from 'react';
 import { AiFillFileImage } from 'react-icons/ai';
 import { MdCloudUpload, MdDelete } from 'react-icons/md';
@@ -11,6 +11,12 @@ const StepFour = () => {
   const [expiryDate, setExpiryDate] = useState('');
   const [choosenFile, setChoosenFile] = useState(null);
   const [fileName, setFileName] = useState('No Selected File');
+
+  const idTypeOptions = [
+    { value: 'nid', label: 'NID' },
+    { value: 'passport', label: 'Passport' },
+    { value: 'idl', label: 'International Driving Licence' },
+  ];
 
   const handleFourthStep = (e) => {
     e.preventDefault();
@@ -40,28 +46,23 @@ const StepFour = () => {
       </div>
       {/* id type */}
       <div>
-        <label htmlFor="idType" className="text-white">
+        <label htmlFor="idType" className="text-white !mb-3">
           ID Type<span className="text-primary">*</span>
         </label>
-        <select
-          required
-          name="idType"
-          id="idType"
-          className="input-with-shadow w-full my-2 !py-4"
-        >
-          <option className="capitalize text-lg" value="nid">
-            NID
-          </option>
-          <option className="capitalize text-lg" value="passport">
-            Passport
-          </option>
-          <option className="capitalize text-lg" value="passport">
-            Internation Driving Licence
-          </option>
-        </select>
+        <Select
+          classNamePrefix="select"
+          defaultValue={idTypeOptions[0]}
+          name="color"
+          options={idTypeOptions}
+          classNames={{
+            control: (state) =>
+              state.isFocused ? 'border-red-600' : 'border-grey-300',
+          }}
+        />
       </div>
+
       {/* id */}
-      <div>
+      <div className="!my-4">
         <label htmlFor="id" className="text-white">
           ID Number<span className="text-primary">*</span>
         </label>

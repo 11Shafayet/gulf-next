@@ -90,10 +90,11 @@ textarea:focus,
 
 .PhoneInput input {
   box-shadow: 3px 3px 11px rgba(0, 0, 0, 0.11);
+  margin-right: 5px;
   border: 0;
   outline: 0;
   border-radius: 7px;
-  padding: 16px;
+  padding: 8px 16px !important;
 }
 
 .react-tel-input input {
@@ -112,6 +113,11 @@ textarea:focus,
 .react-tel-input .country-list .search {
   display: flex !important;
   align-items: center;
+}
+.react-tel-input .country-list .search-box {
+  padding: 8px 16px !important;
+  margin-right: 11px;
+  height: 44px !important;
 }
 
 /* step three */
@@ -147,6 +153,26 @@ textarea:focus,
   margin-top: 28px;
 }
 
+/* step four */
+.css-13cymwt-control {
+  min-height: 55px !important;
+  margin-top: 5px !important;
+}
+.select__control--is-focused {
+  height: 55px !important;
+  border: 0 !important;
+  margin-top: 5px !important;
+}
+.select__indicator svg {
+  margin-right: 6px !important;
+}
+.select__indicator-separator {
+  width: 0 !important;
+}
+.css-13cymwt-control {
+  min-height: 55px !important;
+  margin-top: 5px !important;
+}
 /* swiper slide */
 .swiper-slide-thumb-active {
   border: 2px solid transparent;

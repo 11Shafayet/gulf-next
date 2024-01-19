@@ -21,7 +21,7 @@ const StepOne = ({ setActiveStep }) => {
   };
 
   return (
-    <div className="text-start max-w-[555px] mx-auto bg-white bg-opacity-10 rounded-md backdrop-blur-md mt-6 overflow-hidden">
+    <div className="text-start max-w-[555px] mx-auto bg-white bg-opacity-10 rounded-md backdrop-blur-md mt-6">
       <div className="flex">
         <div
           className={`${
