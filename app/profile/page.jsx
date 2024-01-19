@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import banner from '../../public/abstract1.jpg';
+import Link from 'next/link';
 
 const userData = [
   {
@@ -87,9 +88,12 @@ const Profile = () => {
               <h3 className="text-2xl md:text-3xl font-bold">
                 Personal Informations:
               </h3>
-              <button className="py-2.5 px-5 rounded-md text-white bg-primary hover:bg-opacity-90 duration-300">
+              <Link
+                href={`/edit-profile`}
+                className="py-2.5 px-5 rounded-md text-white bg-primary hover:bg-opacity-90 duration-300"
+              >
                 Edit Info
-              </button>
+              </Link>
             </div>
 
             <div className="grid grid-cols-1 xl:grid-cols-2 gap-x-4">
