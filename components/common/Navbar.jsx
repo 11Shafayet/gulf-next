@@ -86,7 +86,7 @@ const Navbar = () => {
 
             {user && (
               <div
-                className="relative cursor-pointer"
+                className="relative cursor-pointer flex items-center gap-x-2"
                 onClick={() => setUserDash((prev) => !prev)}
               >
                 <Image
@@ -94,6 +94,7 @@ const Navbar = () => {
                   alt="user"
                   className="w-11 h-11 rounded-full"
                 />
+                <h4 className='font-semibold'>John Doe</h4>
                 {userDash && (
                   <div className="absolute top-[111%] right-0 bg-white shadow-light min-w-80 flex flex-col justify-center items-center z-[10000]">
                     <h6 className="hover:bg-primary hover:text-white cursor-pointer font-bold text-lg w-full py-3 px-3">

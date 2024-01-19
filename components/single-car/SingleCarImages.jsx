@@ -24,6 +24,7 @@ const images = [
 
 const SingleCarBidImages = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const [swiperRef, setSwiperRef] = useState(null);
 
   return (
     <div>
@@ -38,16 +39,19 @@ const SingleCarBidImages = () => {
         }}
         modules={[FreeMode, Autoplay, Thumbs]}
         className="mySwiper2 mb-2"
+        onSwiper={setSwiperRef}
       >
-        {images.map((item, i) => (
-          <SwiperSlide key={i}>
-            <Image
-              src={item.img}
-              alt="car"
-              className="w-full max-h-[400px] object-cover rounded-xl"
-            />
-          </SwiperSlide>
-        ))}
+        {images.map((item, i) => {
+          return (
+            <SwiperSlide key={i}>
+              <Image
+                src={item.img}
+                alt="car"
+                className="w-full max-h-[400px] object-cover rounded-xl"
+              />
+            </SwiperSlide>
+          );
+        })}
       </Swiper>
       <Swiper
         onSwiper={setThumbsSwiper}

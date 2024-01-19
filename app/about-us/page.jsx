@@ -15,7 +15,7 @@ const AboutUs = () => {
           <Image
             src={banner}
             alt="banner"
-            className="w-full h-full object-cover "
+            className="w-full h-full object-cover"
           />
         </div>
         <div className="container mx-auto px-4">
