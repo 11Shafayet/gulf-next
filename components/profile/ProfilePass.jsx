@@ -1,10 +1,9 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaCheck, FaInfo, FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
-import Selector from './Selector';
 
-const StepThree = ({ setActiveStep }) => {
+const ProfilePass = () => {
   const [password, setPassword] = useState('');
   const [conPassword, setConPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -12,7 +11,7 @@ const StepThree = ({ setActiveStep }) => {
 
   const [infoVisible, setInfoVisible] = useState(false);
 
-  const handleThirdStep = (e) => {
+  const handlePassChange = (e) => {
     e.preventDefault();
 
     if (password && conPassword && country && state) {
@@ -39,30 +38,23 @@ const StepThree = ({ setActiveStep }) => {
       document.removeEventListener('click', handleOutsideClick);
     };
   }, [infoVisible]);
-
   return (
-    <form
-      onSubmit={handleThirdStep}
-      className="register_step_three max-w-[555px] mx-auto bg-white bg-opacity-10 p-4 md:p-12 rounded-md backdrop-blur-md mt-6"
-    >
-      <h4 className="text-2xl font-bold mb-6 text-white text-center">
-        Please Fill Up the below Fields!
-      </h4>
+    <form onSubmit={handlePassChange}>
       {/* password */}
       <div className="text-start">
         <div className="flex items-center gap-x-2">
-          <label htmlFor="password">
-            Your Password <span className="text-primary">*</span>
+          <label htmlFor="password" className="font-semibold">
+            New Password <span className="text-primary">*</span>
           </label>
           <div className="relative z-[111]">
             <div
-              className="cursor-pointer bg-white w-4 h-4 rounded-full flex justify-center items-center hover:text-white hover:bg-primary duration-500"
+              className="cursor-pointer bg-gray-300 w-4 h-4 rounded-full flex justify-center items-center hover:text-white hover:bg-primary duration-500"
               onClick={() => setInfoVisible((prev) => !prev)}
             >
               <FaInfo size={10} />
             </div>
             {infoVisible && (
-              <div className="absolute top-[180%] left-1/2 -translate-x-1/2 p-4 rounded-md overflow-hidden bg-white w-[320px] z-[111]">
+              <div className="absolute top-[180%] left-1/2 -translate-x-1/2 p-4 rounded-md overflow-hidden bg-gray-100 w-[320px] z-[111]">
                 <ul className="text-sm gap-y-2.5 flex flex-col">
                   <li className="flex items-center gap-x-1">
                     <FaCheck size={12} />
@@ -106,9 +98,9 @@ const StepThree = ({ setActiveStep }) => {
       </div>
 
       {/* confirm password */}
-      <div className="text-start">
-        <label htmlFor="conPass">
-          Confirm Password <span className="text-primary">*</span>
+      <div className="text-start mt-3 mb-4">
+        <label htmlFor="conPass" className="font-semibold">
+          Confirm New Password <span className="text-primary">*</span>
         </label>
         <div className="relative">
           <input
@@ -133,32 +125,14 @@ const StepThree = ({ setActiveStep }) => {
         </div>
       </div>
 
-      {/* choose country */}
-      <div className="text-start !mt-2">
-        <label htmlFor="country">
-          Choose Country <span className="text-primary">*</span>
-        </label>
-        <Selector placeholder="Country" />
-      </div>
-
-      {/* choose state */}
-      <div className="text-start !mt-3">
-        <label htmlFor="state">
-          Choose State <span className="text-primary">*</span>
-        </label>
-        <Selector placeholder="State" />
-      </div>
-
-      <div className="mt-4">
-        <button
-          type="submit"
-          className="bg-primary text-white font-bold w-full py-3 uppercase hover:bg-opacity-90 rounded-md duration-300 mt-2"
-        >
-          Proceed To Step 4
-        </button>
-      </div>
+      <button
+        type="submit"
+        className="bg-primary text-sm text-white font-bold hover:bg-opacity-90 py-3.5 px-4 rounded-md duration-300"
+      >
+        Change Password
+      </button>
     </form>
   );
 };
 
-export default StepThree;
+export default ProfilePass;
