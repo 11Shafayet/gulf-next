@@ -94,7 +94,10 @@ const Navbar = () => {
                   alt="user"
                   className="w-11 h-11 rounded-full"
                 />
-                <h4 className='font-semibold'>John Doe</h4>
+
+                <h4 className="font-semibold text-ellipsis line-clamp-1 max-w-[100px]">
+                  John Doe John Doe
+                </h4>
                 {userDash && (
                   <div className="absolute top-[111%] right-0 bg-white shadow-light min-w-80 flex flex-col justify-center items-center z-[10000]">
                     <h6 className="hover:bg-primary hover:text-white cursor-pointer font-bold text-lg w-full py-3 px-3">
@@ -137,6 +140,17 @@ const Navbar = () => {
                 <p className="sm:text-xl font-medium">0581035772</p>
               </div>
             </div>
+
+            {!user && (
+              <ul className="flex gap-x-2">
+                <li className="text-base font-bold hover:text-primary">
+                  <Link href={`/`}>Login</Link>
+                </li>
+                <li className="text-base font-bold hover:text-primary">
+                  <Link href={`/`}>Register</Link>
+                </li>
+              </ul>
+            )}
 
             {user && (
               <div
@@ -187,16 +201,6 @@ const Navbar = () => {
                 <Link href={item.link}>{item.text}</Link>
               </li>
             ))}
-            {!user && (
-              <>
-                <li className="text-base font-medium hover:text-primary">
-                  <Link href={`/`}>Login</Link>
-                </li>
-                <li className="text-base font-medium hover:text-primary">
-                  <Link href={`/`}>Register</Link>
-                </li>
-              </>
-            )}
           </ul>
         </div>
       )}
