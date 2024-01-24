@@ -37,6 +37,14 @@ const auctionData = [
     lane: 'A',
     totalVehicle: '11',
   },
+  {
+    link: '/',
+    saleTime: '05:55 PM AST',
+    saleName: 'Saja Yard',
+    region: 'Deira',
+    lane: 'A',
+    totalVehicle: '10',
+  },
 ];
 
 const AuctionsList = () => {
@@ -74,7 +82,9 @@ const AuctionsList = () => {
                       360: {
                         slidesPerView: 1,
                       },
-
+                      578: {
+                        slidesPerView: 2,
+                      },
                       1024: {
                         slidesPerView: 'auto',
                       },
@@ -88,19 +98,11 @@ const AuctionsList = () => {
                     }}
                     className="mySwiper relative !px-6 !mx-auto"
                   >
-                    <div
-                      className={`${
-                        auctionData.length <= 4 && 'lg:hidden'
-                      } auction-arrow-left bg-primary p-3 rounded-full text-white duration-300 opacity-100 absolute top-1/2 -translate-y-1/2 left-0 z-[1000] cursor-pointer`}
-                    >
+                    <div className="auction-arrow-left bg-primary p-3 rounded-full text-white duration-300 opacity-100 absolute top-1/2 -translate-y-1/2 left-0 z-[1000]">
                       <FaArrowLeft size={11} />
                     </div>
 
-                    <div
-                      className={`${
-                        auctionData.length <= 4 && 'lg:hidden'
-                      } auction-arrow-right bg-primary p-3 rounded-full text-white duration-300 opacity-100 absolute top-1/2 -translate-y-1/2 right-0 z-[1000] cursor-pointer`}
-                    >
+                    <div className="auction-arrow-right bg-primary p-3 rounded-full text-white duration-300 opacity-100 absolute top-1/2 -translate-y-1/2 right-0 z-[1000]">
                       <FaArrowRight size={11} />
                     </div>
 
@@ -108,9 +110,13 @@ const AuctionsList = () => {
                       <SwiperSlide
                         key={i}
                         className={`relative z-10 w-full rounded-2xl overflow-hidden p-2 ${
-                          auctionData.length === 2 && 'lg:max-w-[48%]'
-                        } ${auctionData.length === 3 && 'lg:max-w-[31%]'} ${
-                          auctionData.length >= 4 && 'lg:max-w-[24%]'
+                          auctionData.length === 3
+                            ? 'sm:max-w-[31%]'
+                            : ' sm:max-w-[22%]'
+                        } ${
+                          auctionData.length === 2
+                            ? 'sm:max-w-[48%]'
+                            : ' sm:max-w-[24%]'
                         }`}
                       >
                         <Link href={auction.link} key={i}>

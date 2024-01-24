@@ -6,6 +6,7 @@ import Image from 'next/image';
 import car1 from '../../public/1.png';
 import car2 from '../../public/2.png';
 import car3 from '../../public/3.png';
+import banner1 from '../../public/banner1.png';
 import ReactImageMagnify from 'react-image-magnify';
 
 const images = [
@@ -25,8 +26,8 @@ const SingleCarBidImages = () => {
 
   return (
     <div>
-      <div className="w-full">
-        <div className="singleImage w-full">
+      <div className="fluid">
+        <div className="fluid-image-container">
           <ReactImageMagnify
             {...{
               smallImage: {
@@ -35,9 +36,9 @@ const SingleCarBidImages = () => {
                 src: images[activeIndex].img.src,
               },
               largeImage: {
-                src: images[activeIndex].img.src,
+                src: banner1.src,
                 width: 1200,
-                height: 600,
+                height: 1800,
               },
             }}
           />
