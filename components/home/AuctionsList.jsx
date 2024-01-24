@@ -21,22 +21,6 @@ const auctionData = [
     lane: 'A',
     totalVehicle: '11',
   },
-  {
-    link: '/',
-    saleTime: '05:55 PM AST',
-    saleName: 'Saja Yard',
-    region: 'Deira',
-    lane: 'A',
-    totalVehicle: '10',
-  },
-  {
-    link: '/',
-    saleTime: '05:55 PM AST',
-    saleName: 'Deira',
-    region: 'Deira',
-    lane: 'A',
-    totalVehicle: '11',
-  },
 ];
 
 const AuctionsList = () => {
@@ -74,9 +58,12 @@ const AuctionsList = () => {
                       360: {
                         slidesPerView: 1,
                       },
-
                       1024: {
-                        slidesPerView: 'auto',
+                        slidesPerView:
+                          (auctionData.length === 1 && 1) ||
+                          (auctionData.length === 2 && 2) ||
+                          (auctionData.length === 3 && 3) ||
+                          (auctionData.length >= 4 && 4),
                       },
                     }}
                     spaceBetween={20}
@@ -86,11 +73,17 @@ const AuctionsList = () => {
                       nextEl: '.auction-arrow-right',
                       prevEl: '.auction-arrow-left',
                     }}
-                    className="mySwiper relative !px-6 !mx-auto"
+                    className={`mySwiper relative !px-6 !mx-auto ${
+                      auctionData.length === 1 && 'max-w-[280px]'
+                    } 
+                    ${auctionData.length === 2 && 'max-w-[600px]'} 
+                    ${auctionData.length === 3 && 'max-w-[900px]'} ${
+                      auctionData.length === 4 && 'max-w-[1200px]'
+                    } ${auctionData.length > 5 && 'full'}`}
                   >
                     <div
                       className={`${
-                        auctionData.length <= 4 && 'lg:hidden'
+                        auctionData.length <= 5 && 'lg:hidden'
                       } auction-arrow-left bg-primary p-3 rounded-full text-white duration-300 opacity-100 absolute top-1/2 -translate-y-1/2 left-0 z-[1000] cursor-pointer`}
                     >
                       <FaArrowLeft size={11} />
@@ -98,7 +91,7 @@ const AuctionsList = () => {
 
                     <div
                       className={`${
-                        auctionData.length <= 4 && 'lg:hidden'
+                        auctionData.length <= 5 && 'lg:hidden'
                       } auction-arrow-right bg-primary p-3 rounded-full text-white duration-300 opacity-100 absolute top-1/2 -translate-y-1/2 right-0 z-[1000] cursor-pointer`}
                     >
                       <FaArrowRight size={11} />
@@ -108,9 +101,9 @@ const AuctionsList = () => {
                       <SwiperSlide
                         key={i}
                         className={`relative z-10 w-full rounded-2xl overflow-hidden p-2 ${
-                          auctionData.length === 2 && 'lg:max-w-[48%]'
-                        } ${auctionData.length === 3 && 'lg:max-w-[31%]'} ${
-                          auctionData.length >= 4 && 'lg:max-w-[24%]'
+                          auctionData.length > 3
+                            ? 'lg:max-w-[300px] xl:max-w-[275px]'
+                            : 'max-w-[275px]'
                         }`}
                       >
                         <Link href={auction.link} key={i}>

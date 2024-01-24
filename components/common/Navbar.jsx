@@ -37,7 +37,7 @@ const Navbar = () => {
   const [userDash, setUserDash] = useState(false);
 
   return (
-    <div className="relative bg-white shadow-md">
+    <div className="relative bg-white shadow-md py-1">
       {userDash && (
         <div
           className="absolute inset-0 h-screen w-screen bg-black bg-opacity-0 z-[100] overflow-hidden"
@@ -76,28 +76,30 @@ const Navbar = () => {
           </ul>
 
           <div className="flex gap-x-4 items-center">
-            <div className="flex items-center gap-x-2 text-primary">
-              <FaPhoneAlt size={30} className="rotate-12" />
-              <div>
-                <p className="text-sm">Free Consultation</p>
-                <p className="text-xl font-medium">0581035772</p>
+            {!user && (
+              <div className="flex items-center gap-x-2 text-primary">
+                <FaPhoneAlt size={30} className="rotate-12" />
+                <div>
+                  <p className="text-sm">Free Consultation</p>
+                  <p className="text-xl font-medium">0581035772</p>
+                </div>
               </div>
-            </div>
+            )}
 
             {user && (
               <div
                 className="relative cursor-pointer flex items-center gap-x-2"
                 onClick={() => setUserDash((prev) => !prev)}
               >
-                <Image
-                  src={one}
-                  alt="user"
-                  className="w-11 h-11 rounded-full"
-                />
-
                 <h4 className="font-semibold text-ellipsis line-clamp-1 max-w-[100px]">
                   John Doe John Doe
                 </h4>
+                <Image
+                  src={one}
+                  alt="user"
+                  className="w-[52px] h-[52px] rounded-full"
+                />
+
                 {userDash && (
                   <div className="absolute top-[111%] right-0 bg-white shadow-light min-w-80 flex flex-col justify-center items-center z-[10000]">
                     <h6 className="hover:bg-primary hover:text-white cursor-pointer font-bold text-lg w-full py-3 px-3">
@@ -160,7 +162,7 @@ const Navbar = () => {
                 <Image
                   src={one}
                   alt="user"
-                  className="w-11 h-11 rounded-full"
+                  className="w-[52px] h-[52px] rounded-full"
                 />
                 {userDash && (
                   <div className="absolute top-[111%] right-0 bg-white black-shadow min-w-72 flex flex-col justify-center items-center z-[10000]">

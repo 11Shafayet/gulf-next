@@ -6,6 +6,7 @@ import Services from '@/components/home/Services';
 import Brands from '@/components/common/Brands';
 import PopularCars from '@/components/home/PopularCar';
 import AuctionsList from '@/components/home/AuctionsList';
+// import { WhatsAppWidget } from 'react-whatsapp-widget';
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <Brands />
       <AuctionsList />
       <PopularCars />
+      {/* <WhatsAppWidget phoneNumber="+8801638719578" /> */}
     </>
   );
 }
