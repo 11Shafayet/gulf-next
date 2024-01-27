@@ -21,7 +21,7 @@ const FloatingWhatsapp = () => {
 
       {active && (
         <div
-          className={`absolute -right-[25px] sm:right-[10px] -top-[450%] w-[330px] sm:w-[350px] h-[300px] rounded-lg overflow-hidden z-[1000]`}
+          className={`absolute -right-[25px] sm:right-[10px] -top-[450%] w-[330px] sm:w-[350px] h-[280px] rounded-lg overflow-hidden z-[1000] black-shadow`}
         >
           <div className="relative bg-[#0A5F54] p-4 flex justify-start items-center gap-x-3">
             <FaTimes
