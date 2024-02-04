@@ -7,7 +7,7 @@ import car1 from '../../public/1.png';
 import car2 from '../../public/2.png';
 import car3 from '../../public/3.png';
 import banner1 from '../../public/banner1.png';
-import ReactImageMagnify from 'react-image-magnify';
+// import ReactImageMagnify from 'react-image-magnify';
 
 const images = [
   { img: car1 },
@@ -28,7 +28,7 @@ const SingleCarBidImages = () => {
     <div>
       <div className="fluid">
         <div className="fluid-image-container">
-          <ReactImageMagnify
+          {/* <ReactImageMagnify
             {...{
               smallImage: {
                 alt: 'car image',
@@ -41,7 +41,7 @@ const SingleCarBidImages = () => {
                 height: 1800,
               },
             }}
-          />
+          /> */}
         </div>
       </div>
 

@@ -33,7 +33,7 @@ const navItems = [
 
 const Navbar = () => {
   const [active, setActive] = useState(false);
-  const [user, setUser] = useState(true);
+  const [user, setUser] = useState(false);
   const [userDash, setUserDash] = useState(false);
 
   return (
